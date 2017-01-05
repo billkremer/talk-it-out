@@ -91,7 +91,8 @@ while (z > 0) {
 function funTimes(val) {
   val = val.toString();
   if (val.length > 1) {
-    val = val.substring(1, val.length);
+      val = val.slice(1);
+//    val = val.substring(1, val.length);
   }
   return val;
 }
