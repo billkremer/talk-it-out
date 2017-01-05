@@ -33,3 +33,69 @@ is more than one character in the string. Return `val` and set the `majorKey` to
 
 14. Your answer should be a string value that equals 7. Is that what you got?
 */
+
+var majorKey = 42
+
+if (majorKey >= 53) {
+  majorKey += 42;
+} else {
+  majorKey -= 13;
+}
+// majorKey should now be 29
+
+majorKey += "11"; //"2911"
+
+var array = [];
+for (var i = 0; i < majorKey.length; i++) {
+  array[i] = majorKey.charAt(i);
+
+}
+//array = ["2", "9", "1", "1"]
+
+array.shift();
+array.pop();
+//array = ["9", "1"]
+
+var newVar = "";
+
+for (var j = array.length; j > 0; j--) {
+  newVar += array[j-1];
+}
+//newVar SHOULD = "19"
+
+newVar = parseInt(newVar);  // newVar = 19
+majorKey = parseInt(majorKey); // majorKey = 2911
+
+//******* Switched PROGRAMMERS
+
+majorKey = majorKey + newVar; // majorKey = 2930
+
+if (majorKey < 60) {
+  majorKey = 14;
+} else if ( majorKey == 2930 ) {
+  majorKey = 27;
+} else {
+  majorKey = 2;
+}
+// very well could be wrong -- double check elseif
+// majorKey = 27
+
+var z = 10;
+while (z > 0) {
+  z--;
+  majorKey++;
+}
+// majorKey = 37
+
+
+function funTimes(val) {
+  val = val.toString();
+  if (val.length > 1) {
+    val = val.substring(1, val.length);
+  }
+  return val;
+}
+
+majorKey = funTimes(majorKey);
+
+console.log(majorKey);
